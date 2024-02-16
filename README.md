@@ -27,7 +27,7 @@ using the "Add new Corgi" button._*
 
 ## Try it
 
-A deployed version of the application is available at https://corgi-collage-Angular.vercel.app/.
+A deployed version of the application is available at https://corgi-collage-angular.vercel.app/.
 You need to install run a Chrome version that contains the changes to
 DevTools that proposed User Timing API format.
 
