@@ -49,7 +49,7 @@ export class CorgiComponent {
         description: 'This emulates a rendering task',
       },
     };
-    performance.measure( 'devtools-entry-Angular extension', measure);
+    performance.measure( 'devtools-Angular extension-flame-chart-entry', measure);
     return result;
   }
 }
