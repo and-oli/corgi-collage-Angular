@@ -45,8 +45,8 @@ export class CorgiComponent {
       detail: {
         name: `Computation of ${val}`,
         color: `rgba(176 38 247 / ${Math.round((val / 5) * 100)}%)`,
-        group: 'Angular Extension Track',
-        description: 'This emulates a rendering task',
+        track: 'Angular Extension Track',
+        detailsText: 'This emulates a rendering task',
       },
     };
     performance.measure( 'devtools-Angular extension-flame-chart-entry', measure);
