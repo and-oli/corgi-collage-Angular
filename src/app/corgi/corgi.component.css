@@ -1,0 +1,15 @@
+.corgi {
+    height: auto;
+    min-width: 300px;
+    width: 300px;
+    aspect-ratio: 1;
+  }
+
+  .corgi-component {
+    flex: 30% 1;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }

@@ -24,12 +24,6 @@
   color: white;
 }
 
-.corgi {
-  height: auto;
-  width: 300px;
-  aspect-ratio: 1;
-}
-
 .corgi-zone{
   display: flex;
   justify-content: space-around;

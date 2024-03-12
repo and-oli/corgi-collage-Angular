@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-  <div class='corgi-component'>
+  <div>
     <div>{{name}}</div>
     <img [src]='image' class='corgi' alt='logo' />
   </div>
@@ -43,13 +43,21 @@ export class CorgiComponent {
       start: then,
       end: performance.now(),
       detail: {
-        name: `Computation of ${val}`,
-        color: `rgba(176 38 247 / ${Math.round((val / 5) * 100)}%)`,
-        track: 'Angular Extension Track',
-        detailsText: 'This emulates a rendering task',
+        devtools: {
+          metadata: {
+            // An identifier for the data type
+            dataType:"flame-chart-entry",
+            // An identifier for the extension
+            extensionName: 'Angular',
+          },
+          name: `Computation of ${val}`,
+          color: 'red',
+          track: 'Angular Extension Track',
+          detailsText: 'This emulates a rendering task',
+        }
       },
     };
-    performance.measure( 'devtools-Angular extension-flame-chart-entry', measure);
+    performance.measure( `Computation of ${val}`, measure);
     return result;
   }
 }
