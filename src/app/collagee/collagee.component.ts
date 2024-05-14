@@ -95,7 +95,7 @@ export class CollageeComponent {
       this.newCorgiName.set('')
       this.newCorgiSecurityPhoto.set('')
     }
-    this.corgis.mutate(values => values.push({name: corgiName, image: corgiImage}));
+    this.corgis.update(values => [...values, {name: corgiName, image: corgiImage}]);
   }
 
   filter(corgiList: Corgi[]): Corgi[] {
