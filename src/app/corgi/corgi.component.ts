@@ -46,14 +46,17 @@ export class CorgiComponent {
         devtools: {
           metadata: {
             // An identifier for the data type
-            dataType:"flame-chart-entry",
+            dataType:"track-entry",
             // An identifier for the extension
             extensionName: 'Angular',
           },
           name: `Computation of ${val}`,
-          color: 'red',
-          track: 'Angular Extension Track',
-          detailsText: 'This emulates a rendering task',
+          color: 'primary',
+          track: 'Angular Extension',
+          detailsPairs: [
+            ["Description", "This emulates a framework task"],
+            ["Tip", "A tip to improve this"],
+          ],
         }
       },
     };
