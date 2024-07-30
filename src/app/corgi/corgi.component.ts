@@ -19,48 +19,49 @@ export class CorgiComponent {
   @Input() image!: string;
 
   ngOnInit() {
-    this.mockChangeDetection();
+    this.calculateFibonacci();
   }
 
   /**
-   * This mocks a task happening when the component renders (f.e change
-   * detection). It consists of a inneficient and slow calculation of a
-   * Fibonacci number. Each calculation is measured and registered to
-   * Chrome using the User Timings API and a proposed predefined
-   * format to extend the Performance Panel.
+   * This mocks a task for the sake of exemplifying the API. It consists
+   * of a inneficient and slow calculation of a Fibonacci number. Each
+   * calculation is measured and registered to Chrome using the User
+   * Timings API and a proposed predefined format to extend the
+   * Performance Panel.
    */
-  mockChangeDetection() {
-    return this.fib(5);
+  calculateFibonacci() {
+    return this.fib(6);
   }
   fib(val: number): number {
     const then = performance.now();
-    while (performance.now() - then < 200 * (1 + Math.random()));
+    const randomDuration = 50 * (1 + Math.random());
+    while (performance.now() - then < randomDuration);
     if (val === 0 || val === 1) {
-      return val
+      this.injectTimingsToBrowser(then, randomDuration, val, val)
+      return 1;
     }
     const result = this.fib(val - 1) + this.fib(val -2);
+    this.injectTimingsToBrowser(then, randomDuration, val, result)
+    return result;
+  }
+
+  injectTimingsToBrowser(startTime: number, dur: number, fibonacciValue: number, result: number) {
     const measure = {
-      start: then,
+      start: startTime,
       end: performance.now(),
       detail: {
         devtools: {
-          metadata: {
-            // An identifier for the data type
-            dataType:"track-entry",
-            // An identifier for the extension
-            extensionName: 'Angular',
-          },
-          name: `Computation of ${val}`,
-          color: 'primary',
-          track: 'Angular Extension',
-          detailsPairs: [
-            ["Description", "This emulates a framework task"],
-            ["Tip", "A tip to improve this"],
+          dataType:"track-entry",
+          color: fibonacciValue %2 === 0 ? 'primary' : 'secondary',
+          track: 'Corgi track',
+          properties: [
+            ["Description", `This is the time taken to calculate the value of the ${fibonacciValue}th vlalue in the Fibonacci sequence`],
+            ["Hint", `There are approximately ${result > 1 ? result + 2: 0} calculations below this one`],
           ],
+          tooltipText: `This is was randomly chosen to take a self time of approx ${dur.toFixed(1)} milliseconds.`
         }
       },
     };
-    performance.measure( `Computation of ${val}`, measure);
-    return result;
+    performance.measure(`Computation of ${fibonacciValue}`, measure);
   }
 }
