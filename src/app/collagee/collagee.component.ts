@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, CorgiComponent, FormsModule],
   template: `
   <div class='App'>
-    <h2 class='text-base font-semibold leading-7 text-indigo-600'>Angular example</h2>
     <p class='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>My Corgi collage</p>
     <header class='header'>
         <img src='https://www.josera.de/media/ratgeber-de/Hund_Corgi_shutterstock_1079352791_Beitragsbild2.jpg' class='corgi-logo' alt='logo' />

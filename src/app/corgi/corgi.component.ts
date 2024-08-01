@@ -55,7 +55,7 @@ export class CorgiComponent {
           color: fibonacciValue %2 === 0 ? 'primary' : 'secondary',
           track: 'Corgi track',
           properties: [
-            ["Description", `This is the time taken to calculate the value of the ${fibonacciValue}th vlalue in the Fibonacci sequence`],
+            ["Description", `This is the time taken to calculate the ${fibonacciValue}th value in the Fibonacci sequence`],
             ["Hint", `There are approximately ${result > 1 ? result + 2: 0} calculations below this one`],
           ],
           tooltipText: `This is was randomly chosen to take a self time of approx ${dur.toFixed(1)} milliseconds.`
