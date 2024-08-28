@@ -9,11 +9,12 @@ import { FormsModule } from '@angular/forms';
   imports: [CommonModule, CorgiComponent, FormsModule],
   template: `
   <div class='App'>
+    <a style='color: blue;position: absolute;left: 10px;' target='_blank'  rel='noopener noreferrer' href='https://github.com/and-oli/corgi-collage-Angular'>Code</a>
     <p class='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>My Corgi collage</p>
     <header class='header'>
         <img src='https://www.josera.de/media/ratgeber-de/Hund_Corgi_shutterstock_1079352791_Beitragsbild2.jpg' class='corgi-logo' alt='logo' />
       </header>
-      <div class='input-wrap'>
+      <div class='input-wrap'>        
         <div class='new-input-wrap'>
           <div>
             Corgi name: <input
