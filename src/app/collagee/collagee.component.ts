@@ -99,7 +99,8 @@ export class CollageeComponent {
   }
 
   filter(corgiList: Corgi[]): Corgi[] {
-    return corgiList.filter(corgi => corgi.name.toLowerCase().includes(this.corgiSearch().toLowerCase())  || this.corgiSearch() === '');
+    const result = corgiList.filter(corgi => corgi.name.toLowerCase().includes(this.corgiSearch().toLowerCase())  || this.corgiSearch() === '');
+    return result;
   }
 }
 

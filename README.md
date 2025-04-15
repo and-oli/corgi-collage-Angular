@@ -1,11 +1,9 @@
 # Corgi Collage
 
-This is a basic Angular app that exemplifies the ability to extend the
-Chrome DevTools Performance Panel using the [API based on User Timings](https://developer.chrome.com/docs/devtools/performance/extension). 
-In this example, the format is used to add custom tracks to the
-timeline.
+This is a basic Angular app that exemplifies the ability to add custom tracks to the
+Chrome DevTools Performance Panel using the [extensibility API](https://developer.chrome.com/docs/devtools/performance/extension). 
 
-## Extension data
+## Custom data
 
 In this example, the code triggers arbitrary tasks that are run when the
 button is clicked. The tasks are measured and registered to the browser
