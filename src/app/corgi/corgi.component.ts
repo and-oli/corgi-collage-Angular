@@ -134,7 +134,7 @@ export class CorgiComponent implements OnInit {
       await new Promise(resolve => setTimeout(resolve, 1000));
       this.measurePerformance(`Preparing to improve quote for ${this.name}`, start, 'tertiary-light');
       
-      const response = await Promise.race([fetch(`https://api.funtranslations.com/translate/yoda.json?text=${encodeURIComponent(quoteResponse)}`), new Promise<undefined>(res => setTimeout(res, 400))]);
+      const response = await Promise.race([fetch(`https://api.funtranslations.com/translate/yoda.json?text=${encodeURIComponent(quoteResponse)}`), new Promise<undefined>(res => setTimeout(res, 1000))]);
       if (!response?.ok) {
         const message = `An error occurred: ${response?.status}`;
         throw new Error(message);
@@ -146,7 +146,7 @@ export class CorgiComponent implements OnInit {
 
       return translationResponse?.contents?.translated ? `"${translationResponse.contents.translated}"` : null;
     } catch (error: any) {  
-      console.error('Error with slow quote translation:', error);
+      console.error('Error with quote translation:', error);
       return quoteResponse;
     }
   }
