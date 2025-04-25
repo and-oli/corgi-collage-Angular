@@ -108,7 +108,7 @@ export class CorgiComponent implements OnInit {
     try {
       const start = performance.now();
       await new Promise(resolve => setTimeout(resolve, 1000));
-      const response = await fetch('https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit');
+      const response = await fetch('https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Pun,Christmas?blacklistFlags=nsfw,religious,political,racist,sexist,explicit');
       this.measurePerformance('Quote fetch', start, 'secondary-light');
       if (!response.ok) {
         const message = `An error occurred: ${response.status}`;
