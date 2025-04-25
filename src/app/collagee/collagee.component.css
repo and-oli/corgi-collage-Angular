@@ -48,7 +48,7 @@
   padding: 100px;
   display: flex;
   flex-direction: column;
-  align-content: flex-start;
+  align-content: center;
   flex-wrap: wrap;
 }
 
